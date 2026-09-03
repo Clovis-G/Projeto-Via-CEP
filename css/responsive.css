@@ -1,0 +1,40 @@
+@media(max-width: 830px){
+    .description-cep{
+        width:70%;
+        margin: 0 auto;
+    }
+    .form{
+        width: 70%;
+    }
+}
+@media(max-width: 620px){
+    .container-header{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    } 
+    .description-cep{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .container-cep{
+        max-width: 70%;
+        margin: 0 auto;
+    }
+    .container-row{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media(max-width:540px){
+    .cards{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media(max-width:396px){
+    .btn{
+        width: 70%;
+        margin-top: 1rem;
+    }
+}

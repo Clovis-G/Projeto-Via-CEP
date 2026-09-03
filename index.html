@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuscadorCEP</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header-main></header-main>
+    <!-- <header class="main-header">
+        <div class="container-header">
+            <div class="container-division">
+                <img class="image-header" src="./assets/icons/map-pin.png" alt="Icone-mapa">
+                <b class="sub-title">Consulta</b>
+                <span class="cep">CEP</span>
+            </div>
+            <nav class="navegation">
+                <a href="#consult">Consultar</a>
+                <a href="#about">Como funciona</a>
+            </nav>
+        </div>
+    </header> -->
+    <main class="container-man">
+        <section class="section-main"  id="consult">
+            <div class="container-section">
+                <p class="description">Gratuito sem cadastro</p>
+                <h1 class="title-main">Descubra o endereço completo <span class="span-title-main">em segundos</span></h1>
+                <p class="description-cep">Digite o Cep abaxo e receba rua, bairro, cidade, estado, IBGE, DDD e outros dados oficiais</p>
+                <div class="container-cep">
+                    <input type="text" class="input-cep" placeholder=" 0 0 0 0 0 - 0 0 0" name="cep">
+                    <button class="btn">Buscar</button>
+                    <p class="result"></p>
+                </div>
+                <form class="form" action="post">
+                    <div class="container-result-search">
+                        <label>RESULTADO DA BUSCA
+                            <input type="text" name="Cep">
+                        </label>
+                        
+                        <div class="container-row">
+                            <div class="container-primary">
+                                <label>LOGRADOURO
+                                    <input type="text" name="logradouro">
+                                </label>
+                                <label>BAIRRO
+                                    <input type="text" name="bairro">
+                                </label>
+                                <label>DDD
+                                    <input type="text" name="ddd">
+                                </label>
+                                <label>UF
+                                    <input type="text" name="uf">
+                                </label>
+                                <label>SIAFI
+                                    <input type="text" name="siafi">
+                                </label>
+                            </div>
+                                
+                            <div class="division-two">        
+                                <label>LOCALIDADE
+                                    <input type="text" name="localidade">
+                                </label>
+                                <label>ESTADO
+                                    <input type="text" name="estado">
+                                </label>
+                                <label>REGIÂO
+                                    <input type="text" name="regiao">
+                                </label>
+                                <label>IBGE
+                                    <input type="text" name="ibge">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="two-section" id="about">
+            <div class="two-container-section">
+                <h2 class="sub-title">Por que usar nossa consulta?</h2>
+                <p class="two-description-section">Rápido, simples e sem complicação. Ideal preenchementos de formulários e conferência de endereços.</p>
+                <div class="cards">
+                    <article class="containers-columns consulta-instatanea">
+                        <div class="icons">    
+                            <img src="./assets/icons/zap.png" alt="icone de consulta instantânea">
+                        </div>
+                        <h3>Consulta imediata</h3>
+                        <p>Resultados em frações de segyndos com dados confiáveis.</p>
+                    </article>
+                    <article class="containers-columns dados-seguro">
+                        <div class="icons">
+                            <img src="./assets/icons/shield-check.png" alt="icone de dados seguros">
+                        </div>
+                        <h3>Dados</h3>
+                        <p>Consulta via servidor, sem expor sua conexão diretamente.</p>
+                    </article>
+                    <article class="containers-columns sempre-disponivel">
+                        <div class="icons">
+                            <img src="./assets/icons/clock.png" alt="Icone de sempre disponível">
+                        </div>
+                        <h3>Sempre disponível</h3>
+                        <p>Acesse quando quiser, de qualquer disponivel.</p>
+                        </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="rodape">
+        <p class="description-rodape">&copy Consuta CEP. Dados fornecidos pela API VIACEP</p>
+    </footer>
+</body>
+<script src="./js/script.js"></script>
+<script src="./components/header.js"></script>
+</html>

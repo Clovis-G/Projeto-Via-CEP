@@ -2,7 +2,7 @@
 Aplicação web desenvolvida para consulta de endereços a partir do CEP, utilizando a API pública ViaCEP.
 O projeto foi desenvolvido com o objetivo de praticar fundamentos de desenvolvimento Front-End, consumo de API, manipulação de dados e construção de interfaces com HTML5, CSS3 e JavaScript.
 ## 🖥️ Demonstração
- **Acesse o projeto:**  [Em breve]
+ **Acesse o projeto:**  clovis-g.github.io/Projeto-Via-CEP/
 ## 🧰 Tecnologias utilizadas
 - HTML5- CSS3- JavaScript- API ViaCEP
 ## ⚙️ Funcionalidades

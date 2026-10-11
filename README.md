@@ -1,125 +1,194 @@
-## 📍 ViaCEP V1 — Consulta de CEP
+# 📍 Projeto Via-CEP — V2
 
-Aplicação web desenvolvida para consultar CEPs e obter informações de endereços de forma simples e rápida, utilizando a API pública do [ViaCEP](https://viacep.com.br/).
+Aplicação web desenvolvida para facilitar a consulta de CEPs brasileiros por meio da API pública [ViaCEP](https://viacep.com.br/). Nesta segunda versão, o projeto evoluiu com a implementação de páginas de cadastro e login, validações de formulários e uma nova funcionalidade de busca de CEP por endereço.
 
-🔗 **Acesse o projeto:** [Projeto ViaCEP — V1](https://clovis-g.github.io/Projeto-Via-CEP/)
+O objetivo é praticar o desenvolvimento front-end, a manipulação do DOM com JavaScript, o consumo de APIs e a organização de funcionalidades em uma aplicação web.
 
-## 📌 Sobre o projeto
+## 📌 Índice
 
-O **ViaCEP V1** é um projeto de desenvolvimento front-end que permite ao usuário informar um CEP e consultar os dados do endereço correspondente.
+- [Sobre o projeto](#-sobre-o-projeto)
+- [Funcionalidades](#-funcionalidades)
+- [Tecnologias utilizadas](#-tecnologias-utilizadas)
+- [Como funciona](#-como-funciona)
+- [Fluxo da aplicação](#-fluxo-da-aplicação)
+- [Como executar o projeto](#-como-executar-o-projeto)
+- [Possíveis melhorias](#-possíveis-melhorias)
+- [Autor](#-autor)
 
-A aplicação consome a API do ViaCEP para recuperar informações como logradouro, bairro, localidade, estado e outros dados disponibilizados pelo serviço.
+## 💻 Sobre o projeto
 
-Esta primeira versão tem como foco a consulta de CEP, a manipulação do DOM e a integração com uma API externa utilizando JavaScript.
+O Via-CEP V2 amplia a proposta inicial de consulta de CEP, adicionando recursos de navegação e formulários para tornar a experiência do usuário mais completa.
+
+A aplicação permite que o usuário realize o cadastro, acesse a página de login e consulte informações de endereço utilizando os dados de estado (UF), cidade, endereço e bairro.
+
+A consulta é realizada por meio de requisições à API ViaCEP, que retorna os dados correspondentes ao endereço informado.
 
 ## 🚀 Funcionalidades
 
-- 🔎 **Consulta de CEP:** pesquisa de endereços a partir de um CEP informado pelo usuário.
-- 📍 **Exibição de endereço:** apresentação dos dados retornados pela API.
-- ✅ **Validação do CEP:** verificação do formato do CEP informado antes da consulta.
-- ⚠️ **Tratamento de respostas:** identificação de CEP inválido ou não encontrado, conforme as validações implementadas.
-- 🔗 **Integração com API:** consumo dos dados disponibilizados pelo ViaCEP.
+### 🔐 Cadastro de usuário
+
+- Formulário para preenchimento dos dados de cadastro.
+- Validação dos campos preenchidos.
+- Verificação de e-mail já cadastrado.
+- Exibição de mensagens de sucesso ou erro durante o cadastro.
+
+### 🔑 Login
+
+- Formulário para autenticação do usuário.
+- Validação dos campos de entrada.
+- Verificação das informações fornecidas.
+- Exibição de mensagens para orientar o usuário durante o processo.
+
+### 📍 Consulta de CEP por endereço
+
+- Busca de CEP por estado (UF).
+- Pesquisa utilizando a cidade.
+- Pesquisa pelo endereço ou logradouro.
+- Filtragem dos resultados pelo bairro informado.
+- Consumo da API pública ViaCEP para obtenção dos dados.
+- Tratamento de situações em que não são encontrados resultados ou os dados informados são inválidos.
+
+### 🧩 Interface e interação
+
+- Manipulação dinâmica dos elementos HTML com JavaScript.
+- Navegação entre as funcionalidades da aplicação.
+- Validação e tratamento das entradas do usuário.
+- Exibição dinâmica de mensagens e resultados.
 
 ## 🛠️ Tecnologias utilizadas
 
-- **HTML5:** estruturação das páginas e dos elementos da interface.
-- **CSS3:** estilização e organização visual da aplicação.
-- **JavaScript:** validações, manipulação do DOM e comunicação com a API.
-- **API ViaCEP:** serviço externo utilizado para consultar informações de endereços.
-- **Git e GitHub:** versionamento e hospedagem do projeto.
+| Tecnologia | Aplicação no projeto                                           |
+| ---------- | -------------------------------------------------------------- |
+| HTML5      | Estruturação das páginas e dos formulários.                    |
+| CSS3       | Estilização da interface e dos componentes.                    |
+| JavaScript | Validações, eventos, manipulação do DOM e lógica da aplicação. |
+| API ViaCEP | Consulta de informações de CEP por endereço.                   |
+| Git        | Controle de versão do código-fonte.                            |
+| GitHub     | Hospedagem do repositório e gerenciamento do projeto.          |
 
-## ⚙️ Como funciona?
+## ⚙️ Como funciona
 
-1. O usuário informa o CEP no campo de consulta.
-2. A aplicação valida o valor informado e remove caracteres que não sejam numéricos, quando aplicável.
-3. O JavaScript realiza uma requisição à API ViaCEP.
-4. A aplicação verifica a resposta recebida.
-5. Se a consulta for bem-sucedida, os dados do endereço são apresentados na interface. Caso contrário, uma mensagem informa o problema identificado.
+### 1. Cadastro e login
+
+O usuário acessa o formulário de cadastro, preenche os campos e passa pelas validações implementadas. Após o cadastro, pode acessar a página de login e informar suas credenciais.
+
+### 2. Consulta de CEP
+
+Na página de consulta, o usuário informa os dados do endereço:
+
+- **Estado:** sigla da unidade federativa.
+- **Cidade:** município do endereço.
+- **Endereço:** nome do logradouro.
+- **Bairro:** região utilizada para filtrar os resultados.
+
+O JavaScript valida as informações e realiza a requisição à API ViaCEP. Os resultados retornados são processados para localizar o endereço correspondente e apresentar o CEP.
 
 ## 🔄 Fluxo da aplicação
 
 ```text
-Usuário informa o CEP
-        |
-        v
-Validação do CEP
-        |
-        v
-Requisição à API ViaCEP
-        |
-        v
-Análise da resposta
-        |
-        +-------------------+
-        |                   |
-        v                   v
-CEP encontrado        CEP inválido
-        |              ou não encontrado
-        v                   |
-Exibição do endereço       v
-                    Exibição de mensagem
+                    VIA-CEP V2
+                        |
+           +------------+------------+
+           |                         |
+       Cadastro                    Login
+           |                         |
+    Validar campos            Validar campos
+           |                         |
+    Verificar e-mail        Verificar credenciais
+           |                         |
+           +------------+------------+
+                        |
+                 Área de consulta
+                        |
+             Informar dados do endereço
+                        |
+           +------------+------------+
+           |            |            |
+          UF          Cidade      Endereço
+                        |
+                     Bairro
+                        |
+               Validar informações
+                        |
+                 Consultar API
+                     ViaCEP
+                        |
+              Processar resultados
+                        |
+              Exibir CEP encontrado
 ```
 
-## ▶️ Como executar localmente
+## ▶️ Como executar o projeto
 
-1. Clone este repositório:
+### Pré-requisitos
 
-   ```bash
-   git clone https://github.com/clovis-g/Projeto-Via-CEP.git
-   ```
+- Um navegador atualizado.
+- [Git](https://git-scm.com/), para clonar o repositório.
+- [Visual Studio Code](https://code.visualstudio.com/), recomendado para editar e executar o projeto.
+- Extensão Live Server para facilitar a execução das páginas durante o desenvolvimento.
 
-2. Acesse a pasta do projeto:
+### Instalação
 
-   ```bash
-   cd Projeto-Via-CEP
-   ```
+**1. Clone o repositório:**
 
-3. Abra o projeto no Visual Studio Code.
-4. Execute o arquivo HTML principal utilizando uma extensão como **Live Server**, caso esteja disponível no projeto.
-      ```bash
-   cd Projeto-Via-CEP/pages
-   ```
-
-Também é possível acessar a aplicação diretamente pelo link publicado no GitHub Pages.
-
-## 🌐 API utilizada
-
-O projeto utiliza a API pública do ViaCEP para realizar consultas de endereços.
-
-**Documentação oficial:** [https://viacep.com.br/](https://viacep.com.br/)
-
-Exemplo de consulta:
-
-```text
-https://viacep.com.br/ws/01001000/json/
+```bash
+git clone https://github.com/Clovis-G/Projeto-Via-CEP.git
 ```
 
-A API retorna os dados do CEP informado em formato JSON, que podem ser processados pelo JavaScript e apresentados na interface.
+**2. Acesse a pasta do projeto:**
 
-## 📚 Objetivos de aprendizagem
+```bash
+cd Projeto-Via-CEP
+```
 
-Este projeto faz parte do meu processo de aprendizado em desenvolvimento web e permite praticar conceitos como:
+**3. Abra o projeto no Visual Studio Code:**
 
-- Manipulação do DOM com JavaScript.
-- Eventos e validação de formulários.
-- Requisições HTTP utilizando `fetch()`.
-- Consumo e tratamento de dados JSON.
-- Tratamento de erros e respostas de uma API.
-- Organização de arquivos e versionamento com Git.
+```bash
+code .
+```
 
-## 📌 Status do projeto
+**4. Selecione a página HTML inicial do projeto no diretório pages e execute-a com o Live Server.**
 
-**Versão 1.0 — Consulta de CEP**
+A localização da página inicial depende da estrutura de pastas do projeto. Caso necessário, abra diretamente o arquivo HTML correspondente à tela que deseja testar.
 
-Esta versão concentra-se na funcionalidade de pesquisa de CEP e exibição dos dados retornados pela API.
+**5. Teste as funcionalidades:**
 
-Funcionalidades adicionais poderão ser desenvolvidas em versões futuras.
+- Realize um cadastro e verifique as mensagens de validação.
+- Acesse a página de login e teste as credenciais.
+- Abra a página de consulta de CEP.
+- Informe estado, cidade, endereço e bairro para realizar a busca.
+
+> **Observação:** a consulta depende de conexão com a internet para acessar a API ViaCEP.
+
+## 💡 Possíveis melhorias
+
+- Implementar recuperação e redefinição de senha.
+- Criar uma página de perfil do usuário.
+- Aprimorar o tratamento de erros e o feedback visual.
+- Adicionar testes automatizados para as validações.
+- Implementar um back-end e um banco de dados para gerenciar usuários de forma mais segura.
+- Melhorar a acessibilidade e a responsividade da interface.
+
+## 📚 Aprendizados
+
+O desenvolvimento da V2 permite aprofundar conhecimentos em:
+
+- Manipulação do DOM e tratamento de eventos.
+- Funções, validações e organização do código JavaScript.
+- Consumo de APIs com `fetch`.
+- Processamento de respostas JSON.
+- Tratamento de erros e resultados de consultas.
+- Versionamento com Git e organização de branches.
+- Evolução incremental de um projeto front-end.
 
 ## 👨‍💻 Autor
 
 **Clovis G.**
 
-Projeto desenvolvido para fins de aprendizado e prática de desenvolvimento front-end.
+Projeto desenvolvido para fins de estudo e prática de desenvolvimento web.
 
-- GitHub: [@clovis-g](https://github.com/clovis-g)
-- Projeto online: [ViaCEP V1](https://clovis-g.github.io/Projeto-Via-CEP/)
+🔗 **Repositório:** [Projeto Via-CEP — GitHub](https://github.com/Clovis-G/Projeto-Via-CEP/tree/develop)
+
+---
+
+*Projeto educacional em evolução. As funcionalidades descritas correspondem à proposta da versão V2.*

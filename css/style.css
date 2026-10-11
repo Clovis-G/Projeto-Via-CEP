@@ -1,8 +1,11 @@
 @import url('./reset.css');
 @import url('./responsive.css');
+@import url('./components.css');
+
 @import url('https://fonts.googleapis.com/css2?family=Frances&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Frances&family=Inter:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Frances&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
 :root{
     --font-primary: "Frances", sans-serif;
     --font-list : "inter", sans-serif;
@@ -16,25 +19,6 @@
     --backgroun-main: #2563eb0d;
 }
 
-.main-header{
-    background-color: var(--background-header);
-    border-bottom: .1rem solid var(--border-inferior);
-    position: sticky;
-    top: 0;
-}
-.container-header{
-    max-width: 80%;
-    margin: auto;
-    padding: 1.6rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-.container-division{
-    display: flex;
-    align-items: center;
-}
 .image-header{
     width: 3rem;
     height: 3rem;
@@ -52,20 +36,7 @@
     font-weight: 600;
     color: var(--color-blue);
 }
-.container-header nav a{
-    display: inline-block;
-    margin-right: 3rem;
-    font-family: var(--font-list);
-    color: var(--color-list);
-    text-decoration: none;
-    &:hover{
-        padding: .5rem;
-        border-radius: 50%;
-        cursor: pointer;
-        border-left: 2px solid var(--color-list);
-        color: var(--color-list-hover);
-    }
-}
+
 .container-section{
     padding-top: 10rem;
     text-align: center;
@@ -108,7 +79,7 @@
 .container-cep{
     max-width: 60rem;
     margin: 0 auto;
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
 }
 .container-cep input{
     display: inline-block;
@@ -117,34 +88,50 @@
     outline: none;
     border: 1px solid var(--border-inferior);
 }
-.input-cep{
+.input-cep, .input-city, .input-address, .input-sector{
     width: 70%;
     margin: auto 0;
     font-size: 1.8rem;
-    background-image: url(../assets/icons/search.png);
+    background-image: url(../assets/icons/globe.png);
     background-repeat: no-repeat;
     background-size: 4rem 4rem;
     background-position:left center;
 }
-.btn{
-    padding: 2rem 2.6rem;
-    font-family: var(--font-geist);
-    font-size: 1.8rem;
-    color: #fff;
-    border: none;
-    background-color: #2563EB;
-    border-radius: 1.6rem;
-    cursor: pointer;
+.input-city{
+    display: none !important;
+    margin-top:.5rem;
+    background-image: url(../assets/icons/map-pin.png);
 }
+.input-address{
+    display: none !important;
+    background-image: url(../assets/icons/map-pin.png);
+    margin-top:.5rem;
+    margin-bottom: .5rem;
+}
+.input-sector{
+    display: none !important;
+    background-image: url(../assets/icons/shield-check.png);
+    margin-top:.5rem;
+    margin-bottom: .5rem;
+}
+
 .result{
-    width: 86%;
-    margin-top:3rem;
+    width: 40rem;
+    margin: 3rem auto;
     text-align: center;
     font-weight: 600;    
     text-transform: uppercase;
 }
 .result b{
     color: rgb(196, 0, 0);
+}
+.result span{
+    display: inline-block;
+    margin-top: .6rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-blue)
 }
 .form{
     display: none;
@@ -270,22 +257,7 @@
     font-family: var(--font-geist);
     color: var(--color-list);
 }
-.cards{
-    margin-top: 5rem;
-    display: flex;
-    gap: 2rem;
-}
-.containers-columns{
-    flex-basis: 33.3%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    border-radius: 1.6rem;
-    background-color: #fff;
-    box-shadow: 0 .1rem .3rem rgba(0,0,0,.1);
-    border: 1px solid var(--border-inferior);
-}
+
 .icons, .icons img{
     width: 4.4rem;
     height: 4.4rem;
@@ -299,12 +271,99 @@
     font-weight: 400;
     color:#6B7488;
 }
-.rodape{
+.footer{
     padding: 4rem 2.4rem;
     font-family: var(--font-geist);
     color: var(--color-list);
 }
-.description-rodape{
+.footer-description, .developer-information{
     text-align: center;
     font-size: 1.8rem;
+}
+.developer-information{
+    display: block;
+    margin-top: 1rem;
+}
+.developer-information a {
+    text-decoration: none;
+    color: var(--color-blue);
+}
+.form-ViaCEP{
+    padding: 0;
+    border: none;
+    outline: none;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-form{
+    width: 100%;
+    max-width: 50rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: 1s;
+    &:hover{
+        border: none;
+        padding: 8rem;
+        border-left: .5rem solid var(--color-list);
+        border-radius: 50%;
+    } 
+}
+.custom-border{
+    border-left: .5rem solid var(--color-blue);
+    &:hover{
+        border-left: .5rem solid var(--color-blue);
+    }
+}
+.title-form-ViaCEP{
+    margin-bottom: 4rem;
+    font-weight: 500;
+    text-align: center;
+}
+.Via-CEP{
+    text-decoration: none;
+    text-shadow: .3rem .1rem .1rem var(--color-list);
+    color: var(--color-blue);
+}
+#email, #password, .btn-form{
+    display: block;
+    width: 100%;
+}
+#email ,#password, .btn-form{
+    margin-bottom: 2.4rem;
+    padding: 1.4rem 1rem;
+    border-radius: 1rem;
+    border: .1rem solid;
+    font-size: 1.5rem;
+}
+#email:focus, #password:focus{
+    border: .1rem solid var(--color-blue);
+    outline: none;
+}
+.btn-form{
+    text-align: center;
+}
+.redirect-description a:active, .redirect-description a:active{
+    color: var(--color-list);
+}
+.redirect-description a:visited, .redirect-description a:visited{
+    color: var(--color-blue);
+}
+.password-reset a:visited {
+    color: #00008b;
+}
+.message{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.redirect-description{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.password-reset{
+    text-align: center;
+}
+.form-ViaCEP:has(.container-form:hover) .password-reset a, .form-ViaCEP:has(.container-form:hover) .redirect-description a{
+    border-bottom: .1rem solid rgb(226, 226, 243);
 }

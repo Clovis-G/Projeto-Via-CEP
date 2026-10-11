@@ -1,0 +1,65 @@
+/* Container header - estilização do container principal*/
+.main-header{
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--background-header);
+    border-bottom: .1rem solid var(--border-inferior);
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* main-header - Estilização dos links  */
+.main-header nav a{
+    display: inline-block;
+    margin-right: 3rem;
+    font-family: var(--font-list);
+    text-decoration: none;
+    color: var(--color-list);
+    &:hover{
+        padding: .5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        border-left: 2px solid var(--color-list);
+        color: var(--color-list-hover);
+    }
+}
+
+/* Cards - Estilização dos cards */
+.cards{
+    margin-top: 5rem;
+    display: flex;
+    gap: 2rem;
+}
+
+/* Btn - Estilização do botão */
+.btn{
+    padding: 2rem 2.6rem;
+    font-family: var(--font-geist);
+    font-size: 1.8rem;
+    color: #fff;
+    border: none;
+    background-color: #2563EB;
+    border-radius: 1.6rem;
+    cursor: pointer;
+}
+.btn-enable{
+    display: block;   
+    width: 40%;
+    margin: 0 auto;
+}
+
+/* Containers-columns - Containes em formato de colunas */
+.containers-column{
+    flex-basis: 33.3%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 1.6rem;
+    background-color: #fff;
+    box-shadow: 0 .1rem .3rem rgba(0,0,0,.1);
+    border: 1px solid var(--border-inferior);
+}

@@ -1,4 +1,25 @@
+@media(max-width: 1025px){
+    .cep{
+        display: block;
+        text-align: center;
+    }    
+}
 @media(max-width: 830px){
+    .container-division{
+        text-align: center;
+    }
+    .navegation{
+        text-align: right;
+    }
+    .navegation ul {
+        width: 70%;
+        margin-left: auto;
+        text-align: left;
+    }
+     .navegation a {
+        margin-right: 2.4rem;
+        margin-bottom: .8rem;
+    }
     .description-cep{
         width:70%;
         margin: 0 auto;

@@ -4,35 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuscadorCEP</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header-main></header-main>
-    <!-- <header class="main-header">
-        <div class="container-header">
-            <div class="container-division">
-                <img class="image-header" src="./assets/icons/map-pin.png" alt="Icone-mapa">
-                <b class="sub-title">Consulta</b>
-                <span class="cep">CEP</span>
-            </div>
-            <nav class="navegation">
-                <a href="#consult">Consultar</a>
-                <a href="#about">Como funciona</a>
-            </nav>
-        </div>
-    </header> -->
     <main class="container-man">
         <section class="section-main"  id="consult">
             <div class="container-section">
                 <p class="description">Gratuito sem cadastro</p>
                 <h1 class="title-main">Descubra o endereço completo <span class="span-title-main">em segundos</span></h1>
-                <p class="description-cep">Digite o Cep abaxo e receba rua, bairro, cidade, estado, IBGE, DDD e outros dados oficiais</p>
+                <p class="description-cep">Digite o Cep abaixo e receba rua, bairro, cidade, estado, IBGE, DDD e outros dados oficiais</p>
                 <div class="container-cep">
                     <input type="text" class="input-cep" placeholder=" 0 0 0 0 0 - 0 0 0" name="cep">
+                    <input type="text" class="input-city" placeholder=" Cidade:" name="city">
+                    <input type="text" class="input-address" placeholder=" Logradouro / endereço:" name="address">
+                    <input type="text" class="input-sector" placeholder=" Setor:" name="sector">
                     <button class="btn">Buscar</button>
                     <p class="result"></p>
                 </div>
-                <form class="form" action="post">
+                <form class="form">
                     <div class="container-result-search">
                         <label>RESULTADO DA BUSCA
                             <input type="text" name="Cep">
@@ -83,21 +73,21 @@
                 <div class="cards">
                     <article class="containers-columns consulta-instatanea">
                         <div class="icons">    
-                            <img src="./assets/icons/zap.png" alt="icone de consulta instantânea">
+                            <img src="../assets/icons/zap.png" alt="icone de consulta instantânea">
                         </div>
                         <h3>Consulta imediata</h3>
                         <p>Resultados em frações de segyndos com dados confiáveis.</p>
                     </article>
                     <article class="containers-columns dados-seguro">
                         <div class="icons">
-                            <img src="./assets/icons/shield-check.png" alt="icone de dados seguros">
+                            <img src="../assets/icons/shield-check.png" alt="icone de dados seguros">
                         </div>
                         <h3>Dados</h3>
                         <p>Consulta via servidor, sem expor sua conexão diretamente.</p>
                     </article>
                     <article class="containers-columns sempre-disponivel">
                         <div class="icons">
-                            <img src="./assets/icons/clock.png" alt="Icone de sempre disponível">
+                            <img src="../assets/icons/clock.png" alt="Icone de sempre disponível">
                         </div>
                         <h3>Sempre disponível</h3>
                         <p>Acesse quando quiser, de qualquer disponivel.</p>
@@ -106,10 +96,12 @@
             </div>
         </section>
     </main>
-    <footer class="rodape">
-        <p class="description-rodape">&copy Consuta CEP. Dados fornecidos pela API VIACEP</p>
+    <footer class="footer">
+        <p class="footer-description">&copy Consuta CEP. Dados fornecidos pela API VIACEP</p>
+        <b class="developer-information">Desenvolvido pelo desenvolvedor <a href="">Clovis Gilmar Filho</a></b>
     </footer>
+
+    <script type="module" src="../components/header.js"></script>
+    <script type="module" src="../js/script.js"></script>
 </body>
-<script src="./js/script.js"></script>
-<script src="./components/header.js"></script>
 </html>
